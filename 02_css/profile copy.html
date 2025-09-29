@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서재승프로필</title>
+    <style>
+        body {
+            max-width: 800px;
+
+            margin: 0 auto;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        table {
+            margin: 0 auto;
+
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+
+        }
+
+        th,
+        td {
+            padding: 10px;
+            width: 500px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        figure {
+
+            text-align: center;
+
+        }
+
+
+        form {
+            display: inline-block;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        input,
+        textarea,
+        button {
+            width: 100%;
+            margin-top: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: rgb(150, 178, 192);
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+
+        ul,
+        li {
+            list-style-position: inside;
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+
+        }
+
+        .boxBackground-color {
+            background-color: rgb(150, 178, 192);
+            margin: 5px;
+            padding: 15px;
+            border-radius: 40%;
+            /* border: 2px groove black; */
+            color: white;
+
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .boxColor {
+            background-color: rgb(150, 178, 192);
+            color: white;
+            font-size: 18px;
+        }
+
+        .hrClass {
+            border: 1px solid rgb(94, 92, 92)
+        }
+
+        p,
+        h1 {
+            text-align: center;
+        }
+
+
+
+        .profile-header {
+            background-color: rgb(126, 157, 173);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            border-radius: 60% 35% 55%;
+        }
+
+        .button:hover {
+            background-color: rgb(78, 105, 118);
+            /*  transform : 요소의 모양을 변형시키는 속성 */
+            /* transform: translateY(-100px); */
+            /* Y축으로 -5px(위로) 이동*/
+            /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.548); */
+        }
+
+        /* Active: 요소를 클릭하고 있는 동안의 상태를 선택 */
+        .button:active {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.548);
+        }
+
+        /* --- Rain Effect --- */
+        .rain-container {
+            position: fixed;
+            /* 화면 전체 덮기 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            /* 클릭 이벤트 방해 X */
+            z-index: -1;
+            /* 프로필 위로 올라가지 않도록 */
+        }
+
+        .rain-container .rain {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .rain-container .rain.back-row {
+            opacity: 0.4;
+        }
+
+        .rain-container .drop {
+            position: absolute;
+            bottom: 100%;
+            width: 10px;
+            height: 100px;
+            animation: rain-drop 1s linear infinite;
+        }
+
+        .rain-container .stem {
+            width: 1px;
+            height: 60%;
+             background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+            margin-left: 4px;
+            animation: rain-stem 1s linear infinite;
+        }
+
+        .rain-container .splat {
+            width: 10px;
+            height: 6px;
+            border-top: 4px dotted rgba(0, 0, 0, 0.5);
+
+            border-radius: 50%;
+            transform: scale(0);
+            opacity: 1;
+            animation: rain-splat 1s linear infinite;
+        }
+
+        /* 앞/뒤 레이어에 딜레이 추가 */
+        .rain-container .front-row .drop:nth-child(1) {
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .rain-container .front-row .drop:nth-child(2) {
+            left: 20%;
+            animation-delay: 0.2s;
+        }
+
+        .rain-container .front-row .drop:nth-child(3) {
+            left: 35%;
+            animation-delay: 0.4s;
+        }
+
+        .rain-container .front-row .drop:nth-child(4) {
+            left: 50%;
+            animation-delay: 0.6s;
+        }
+
+        .rain-container .front-row .drop:nth-child(5) {
+            left: 70%;
+            animation-delay: 0.8s;
+        }
+
+        .rain-container .back-row .drop:nth-child(1) {
+            left: 10%;
+            animation-delay: 0.1s;
+        }
+
+        .rain-container .back-row .drop:nth-child(2) {
+            left: 40%;
+            animation-delay: 0.3s;
+        }
+
+        .rain-container .back-row .drop:nth-child(3) {
+            left: 60%;
+            animation-delay: 0.5s;
+        }
+
+        /* 애니메이션 키프레임 */
+        @keyframes rain-drop {
+            0% {
+                transform: translateY(0);
+            }
+
+            80%,
+            100% {
+                transform: translateY(90vh);
+            }
+        }
+
+        @keyframes rain-stem {
+
+            0%,
+            65% {
+                opacity: 1;
+            }
+
+            75%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes rain-splat {
+
+            0%,
+            80% {
+                opacity: 1;
+                transform: scale(0);
+            }
+
+            90% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="rain-container splat-toggle back-row-toggle">
+        <!-- 앞 레인 -->
+        <div class="rain front-row">
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+                   <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+                   <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+                   <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>       <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>       <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+                   <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+        </div>
+
+        <!-- 뒤 레인 -->
+        <div class="rain back-row">
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+            <div class="drop">
+                <div class="stem"></div>
+                <div class="splat"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="profile-header">
+
+        <h1 id="guestbook">서재승 (Jaeseung Seo)</h1>
+
+        <p>
+            안녕하세요! 예비 개발자 <b>서재승</b>입니다. <br>
+            "도전하는 만큼 성장한다"를 믿습니다.
+        </p>
+    </div>
+
+    <main>
+
+
+        <hr>
+
+        <h2>📚보유 기술 (Skills)</h2>
+        <ul>
+            <li class="boxBackground-color">HTML</li>
+            <li class="boxBackground-color">CSS3</li>
+            <li class="boxBackground-color">JavaScript</li>
+        </ul>
+
+        <hr>
+
+        <h2>🕰️시간표 (Schedule)</h2>
+        <table>
+            <caption>2025년 1학기 시간표</caption>
+            <thead>
+                <tr>
+                    <th class="boxColor">시간</th>
+                    <th class="boxColor">월요일</th>
+                    <th class="boxColor">수요일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1교시</th>
+                    <td>웹 프로그래밍 기초</td>
+                    <td rowspan="2">자료구조</td>
+                </tr>
+                <tr>
+                    <th>2교시</th>
+                    <td>웹 프로그래밍 기초</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🖼️좋아하는 사진</h2>
+        <hr class="hrClass">
+        <figure>
+            <img src="pigImage.webp" alt="pig" width="250" height="250">
+            <figcaption>제가 가장 좋아하는 샘플 이미지입니다.</figcaption>
+        </figure>
+        <hr>
+
+        <h2>🎵좋아하는 음악</h2>
+        <audio src="audio/major.mp3" controls></audio>
+
+        <hr>
+
+        <h2>🔗관련 링크 (Links)</h2>
+        <ul>
+            <li>저의 포트폴리오를 더 보고 싶다면
+                <a href="https://github.com/jaeseung9" target="_blank">제 깃허브</a>를 방문해주세요.
+            </li>
+        </ul>
+
+        <form action="#" method="post">
+            <h2>📄방명록 (Guestbook)</h2>
+            <fieldset>
+                <legend>방명록 남기기</legend>
+
+                <div>
+                    <label for="user-Name">이름:</label>
+                    <input type="text" id="user-id" name="userName">
+                </div>
+
+                <div>
+                    <label for="user-Text">내용:</label>
+                    <textarea name="memo" id="memo" rows="5"></textarea>
+                </div>
+
+                <button type="submit" href="#" class="button">남기기</button>
+            </fieldset>
+        </form>
+
+        <hr>
+    </main>
+
+    <p>Copyright 2025, Jaeseung Seo, All rights reserved.</p>
+
+    <p>
+        <a href="#guestbook">페이지 상단으로 이동</a>
+    </p>
+</body>
+
+</html>

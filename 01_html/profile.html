@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서재승프로필</title>
+    <style>
+        body {
+            max-width: 800px; /* 페이지 너비 */
+            margin: 0 auto;   /* 좌우 중앙 */
+            text-align: center; /* 텍스트 중앙 */
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            margin: 0 auto; /* 표 중앙 */
+            border: 1px solid #ccc;
+            border-collapse: collapse; /* 오타 수정: collapsse → collapse */
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        figure {
+            margin: 20px auto; /* 이미지 중앙 */
+        }
+
+        form {
+            display: inline-block; /* form 중앙 */
+            text-align: left;      /* form 내부 왼쪽 정렬 */
+            margin-top: 20px;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            margin-top: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+
+        ul, li {
+            list-style-position: inside;
+            text-align: left; /* 리스트 왼쪽 정렬 */
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="guestbook">서재승 (Jaeseung Seo)</h1>
+
+    <p>
+        안녕하세요! 예비 개발자 <b>서재승</b>입니다. <br>
+        "도전하는 만큼 성장한다"를 믿습니다.
+    </p>
+
+    <hr>
+
+    <h2>📚보유 기술 (Skills)</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <hr>
+
+    <h2>🕰️시간표 (Schedule)</h2>
+    <table>
+        <caption>2025년 1학기 시간표</caption>
+        <thead>
+            <tr>
+                <th>시간</th>
+                <th>월요일</th>
+                <th>수요일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1교시</th>
+                <td>웹 프로그래밍 기초</td>
+                <td rowspan="2">자료구조</td>
+            </tr>
+            <tr>
+                <th>2교시</th>
+                <td>웹 프로그래밍 기초</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>🖼️좋아하는 사진</h2>
+    <figure>
+        <img src="pigImage.webp" alt="pig" width="250" height="250">
+        <figcaption>제가 가장 좋아하는 샘플 이미지입니다.</figcaption>
+    </figure>
+
+    <h2>🎵좋아하는 음악</h2>
+    <audio src="audio/major.mp3" controls></audio>
+
+    <hr>
+
+    <h2>🔗관련 링크 (Links)</h2>
+    <ul>
+        <li>저의 포트폴리오를 더 보고 싶다면 
+            <a href="https://github.com/jaeseung9" target="_blank">제 깃허브</a>를 방문해주세요.
+        </li>
+    </ul>
+
+    <form action="#" method="post">
+        <h2>📄방명록 (Guestbook)</h2>
+        <fieldset>
+            <legend>방명록 남기기</legend>
+
+            <div>
+                <label for="user-Name">이름:</label>
+                <input type="text" id="user-id" name="userName">
+            </div>
+
+            <div>
+                <label for="user-Text">내용:</label>
+                <textarea name="memo" id="memo" rows="5"></textarea>
+            </div>
+
+            <button type="submit">남기기</button>
+        </fieldset>
+    </form>
+
+    <hr>
+
+    <p>Copyright 2025, Jaeseung Seo, All rights reserved.</p>
+
+    <p>
+        <a href="#guestbook">페이지 상단으로 이동</a>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 기본 태그 모음</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>📌 HTML 기본 태그 정리</h1>
+
+    <h2>1. 제목 태그 (h1 ~ h6)</h2>
+    <p>문서의 <b>계층 구조</b>를 나타냅니다. 숫자가 작을수록 글씨가 큽니다.</p>
+    <pre><code>&lt;h1&gt;h1 제목&lt;/h1&gt;
+&lt;h2&gt;h2 제목&lt;/h2&gt;
+&lt;h3&gt;h3 제목&lt;/h3&gt;
+&lt;h4&gt;h4 제목&lt;/h4&gt;
+&lt;h5&gt;h5 제목&lt;/h5&gt;
+&lt;h6&gt;h6 제목&lt;/h6&gt;</code></pre>
+    <h1>h1 제목</h1>
+    <h2>h2 제목</h2>
+    <h3>h3 제목</h3>
+    <h4>h4 제목</h4>
+    <h5>h5 제목</h5>
+    <h6>h6 제목</h6>
+
+    <h2>2. 문단 태그 (p)</h2>
+    <pre><code>&lt;p&gt;이것은 첫 번째 문단입니다.&lt;/p&gt;
+&lt;p&gt;이것은 두 번째 문단입니다.&lt;/p&gt;</code></pre>
+    <p>이것은 첫 번째 문단입니다.</p>
+    <p>이것은 두 번째 문단입니다.</p>
+
+    <h2>3. 줄바꿈 태그 (br)</h2>
+    <pre><code>안녕하세요.&lt;br&gt;줄이 바뀝니다.&lt;br&gt;세 번째 줄입니다.</code></pre>
+    안녕하세요.<br>줄이 바뀝니다.<br>세 번째 줄입니다.
+
+    <h2>4. 수평선 태그 (hr)</h2>
+    <pre><code>&lt;p&gt;위 문단&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;아래 문단&lt;/p&gt;</code></pre>
+    <p>위 문단</p>
+    <hr>
+    <p>아래 문단</p>
+
+    <h2>5. 텍스트 강조 태그</h2>
+    <pre><code>&lt;b&gt;굵게&lt;/b&gt; 와 &lt;strong&gt;중요&lt;/strong&gt;</code></pre>
+    <b>굵게</b> 와 <strong>중요</strong><br>
+
+    <pre><code>&lt;i&gt;이탤릭&lt;/i&gt; 와 &lt;em&gt;강조&lt;/em&gt;</code></pre>
+    <i>이탤릭</i> 와 <em>강조</em><br>
+
+    <pre><code>&lt;u&gt;밑줄&lt;/u&gt;</code></pre>
+    <u>밑줄</u><br>
+
+    <pre><code>&lt;s&gt;취소선&lt;/s&gt;</code></pre>
+    <s>취소선</s>
+
+    <h2>6. 목록 태그</h2>
+    <h3>(1) 순서 없는 목록 (ul)</h3>
+    <pre><code>&lt;ul&gt;
+  &lt;li&gt;사과&lt;/li&gt;
+  &lt;li&gt;바나나&lt;/li&gt;
+  &lt;li&gt;포도&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>포도</li>
+    </ul>
+
+    <h3>(2) 순서 있는 목록 (ol)</h3>
+    <pre><code>&lt;ol&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    <h2>7. 링크 태그 (a)</h2>
+    <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;구글&lt;/a&gt;</code></pre>
+    <a href="https://www.google.com" target="_blank">구글</a>
+
+    <h2>8. 이미지 태그 (img)</h2>
+    <pre><code>&lt;img src="pigImage.webp" alt="돼지 사진" width="200"&gt;</code></pre>
+    <img src="pigImage.webp" alt="돼지 사진" width="200">
+
+    <h2>9. 표 태그 (table)</h2>
+    <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;이름&lt;/th&gt;
+    &lt;th&gt;나이&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;서재승&lt;/td&gt;
+    &lt;td&gt;20&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+        </tr>
+        <tr>
+            <td>서재승</td>
+            <td>20</td>
+        </tr>
+    </table>
+
+    <h2>10. 미디어 태그</h2>
+    <h3>(1) 오디오</h3>
+    <pre><code>&lt;audio src="audio/major.mp3" controls&gt;&lt;/audio&gt;</code></pre>
+    <audio src="audio/major.mp3" controls></audio>
+
+    <h3>(2) 비디오</h3>
+    <pre><code>&lt;video src="video/sample.mp4" controls width="300"&gt;&lt;/video&gt;</code></pre>
+    <video src="video/sample.mp4" controls width="300"></video>
+
+    <h2>11. 입력 태그 (form)</h2>
+    <pre><code>&lt;form&gt;
+  이름: &lt;input type="text"&gt;&lt;br&gt;&lt;br&gt;
+  비밀번호: &lt;input type="password"&gt;&lt;br&gt;&lt;br&gt;
+  &lt;textarea rows="4" cols="30"&gt;내용 입력&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;제출&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    <form>
+        이름: <input type="text"><br><br>
+        비밀번호: <input type="password"><br><br>
+        <textarea rows="4" cols="30">내용 입력</textarea><br><br>
+        <button type="submit">제출</button>
+    </form>
+
+    <hr>
+    <p>✅ 여기까지 HTML의 기본 태그들을 한 번에 정리했습니다!</p>
+</body>
+</html>

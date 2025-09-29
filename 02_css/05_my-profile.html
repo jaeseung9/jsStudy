@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홍길동의 프로필 페이지</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <!-- CSS는 맛보기로 살짝만 보여줍니다. -->
+  <style>
+    body,
+    h1,
+    h2,
+    p,
+    ul,
+    table {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Jua", serif;
+      background-color: #f8f9fa;
+      line-height: 1.7;
+
+    }
+    /* 페이지 전체를 감싸는 컨테이너 (가운데 정렬을 위해) */
+    .container{
+      width: 90%;
+      /* max-width:화면이 아무리 커져도 최대 너비는 800px*/
+      max-width: 800px;
+      /* 위아래 40px, 좌우는 자동으로 여백을 줘서 가운데 정렬 */
+      margin: 40px auto;
+      background-color: white; 
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: bolder;
+      color: rgb(50, 40, 50);
+      margin-bottom: 10px;
+    }
+    ul{
+      list-style-type: none; /* 기본 점 제거*/
+      display: flex;
+      gap: 20px; /* 아이템 사이 간격 */
+      list-style: none; /* 점 없애기 */
+      padding: 0;
+    }
+
+    input[type="text"], textarea{
+
+    }
+
+    button[type="submit"] {
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 1단계: 글자와 목록 태그로 기본 정보 작성하기 -->
+  <div class="container">
+    <header>
+      <h1>홍길동 (Gildong Hong)</h1>
+      <p>
+        안녕하세요! 성장을 즐기는 예비 개발자 <strong>홍길동</strong>입니다.<br>
+        <em>"배움에는 끝이 없다"</em>는 말을 좋아합니다.
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <h2>📚 보유 기술 (Skills)</h2>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
+
+      <hr>
+
+      <!-- 2단계: 표와 미디어 태그로 상세 정보 추가하기 -->
+      <section>
+        <h2>⏰ 시간표 (Schedule)</h2>
+        <table>
+          <caption>2025년 1학기 시간표</caption>
+          <thead>
+            <tr>
+              <th>시간</th>
+              <th>월요일</th>
+              <th>수요일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1교시</th>
+              <td>웹 프로그래밍 기초</td>
+              <td rowspan="2">자료구조</td>
+            </tr>
+            <tr>
+              <th>2교시</th>
+              <td>웹 프로그래밍 기초</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>🖼️ 좋아하는 사진</h2>
+        <figure>
+          <img src="sample/image/city1.PNG" alt="샘플 이미지" width="400">
+          <figcaption>제가 가장 좋아하는 샘플 이미지입니다.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>🎵 좋아하는 음악</h2>
+        <audio src="sample/audio/major.mp3" controls></audio>
+      </section>
+
+      <hr>
+
+      <!-- 3단계: 링크와 폼 태그로 소통 창구 만들기 -->
+      <section>
+        <h2>🔗 관련 링크 (Links)</h2>
+        <p>
+          저의 포트폴리오를 더 보고 싶다면 <a href="https://github.com" target="_blank">제 깃허브</a>를 방문해주세요.
+        </p>
+      </section>
+
+      <section>
+        <h2>📝 방명록 (Guestbook)</h2>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>방명록 남기기</legend>
+            <div>
+              <label for="guest-name">이름:</label>
+              <input type="text" id="guest-name" name="guest-name" required>
+            </div>
+            <div>
+              <label for="guest-memo">내용:</label>
+              <textarea id="guest-memo" name="guest-memo" rows="3"></textarea>
+            </div>
+            <div>
+              <button type="submit">남기기</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <hr>
+
+    <!-- 4단계: 시맨틱 태그로 구조화 및 마무리 -->
+    <footer>
+      <p>Copyright 2025. Gildong Hong. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+
+</html>
