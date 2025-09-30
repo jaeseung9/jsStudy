@@ -17,11 +17,11 @@ function hello(name) // 매개변수
 //hello('판다'); // 전달하는 값을 '인수(argument)'라고한다.
 
 var result = hello('판다'); 
-console.log(result);
+console.log(result); // 판다님 안녕하세요.
 
 // 인수가 부족해서 할당되지 않은 매개변수의 값은 undefined이다.
 result = hello();
-console.log(result);
+console.log(result); // undefined 님 안녕하세요
 
 // 매개변수보다 인수가 더 많은 경우 초과된 인수는 무시된다.
 result = hello('코알라','판다');

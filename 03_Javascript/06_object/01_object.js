@@ -20,3 +20,13 @@ var student = {
 }
 
 console.log(typeof student);
+
+
+//let Struct = {
+//    name: '재승',
+//    age: 27,
+//    location: '광진구',
+//    gender: 'man'
+//}
+//
+//console.log(Struct);

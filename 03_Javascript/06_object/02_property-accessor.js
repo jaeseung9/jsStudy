@@ -35,6 +35,6 @@ console.log("age" in dog);
 // for in 반복문
 // 객체의 모든 프로퍼티 키 순회
 for(var key in dog){        // dog안에 있는 k라는 값으로 다 사용        
-    console.log(`key : ${key}`);
-    console.log(`dog${key} : ${dog[key]}`);
+    console.log(`key : ${key}`);//
+    console.log(`key :${key} : 인자값: ${dog[key]}`);
 }
