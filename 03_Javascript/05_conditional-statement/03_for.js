@@ -19,12 +19,3 @@ for (var i =0; i<10; i++)
 
 //#endregion
 
-
-
-for(var i=0; i<5; i++)
-{
-    for(var j=5; j>0; j--)
-        {console.log("□");
-            
-        }
-}

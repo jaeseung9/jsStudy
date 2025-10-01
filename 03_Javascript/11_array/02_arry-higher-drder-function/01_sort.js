@@ -29,6 +29,6 @@ a - b가 양수면 b를 앞으로
 const users = [
     {name: '판다', age: 5},
     {name: '캥거루', age: 3}
-]
+];
 
-users.sort((a,b)=> a.age - b.age)
+users.sort((a,b)=> a.age - b.age); // 나이기준 정렬

@@ -19,3 +19,4 @@ names.forEach(function(name){
 names.forEach((name,index,array)=>{
     console.log(`${index + 1}번째 이름: ${name}`);
 })
+

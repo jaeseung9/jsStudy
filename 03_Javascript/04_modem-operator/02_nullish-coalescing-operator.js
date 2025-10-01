@@ -12,4 +12,6 @@ console.log(test);
 // 상품 재고가 0개여야 하는 상황에 의도치 않는 기본 값이 설정 될 수 있다.
 //var value = "" || '기본 값';  // '기본 값'
 
+// null 병합 연산자는 null, undefined가 아닐 경우 그대로 반환한다.
 var value = '' ?? '기본 값';
+console.log(value);

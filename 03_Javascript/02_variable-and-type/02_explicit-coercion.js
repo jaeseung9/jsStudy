@@ -35,6 +35,11 @@ console.log(parseInt('10원'));
 // 3. + 단항 산술 연산자 이용 - 암묵적 변환 챕터에서 확인함
 
 // 불리언 타입으로 변환
+/* 
+Falsy (false, undefined, null, 0, NaN, '')는 false로,
+나머지는 모두 true로 바꿔주는 방법입니다.
+Falsy 규칙을 그대로 적용
+*/
 
 // 1. Boolean 생성자 함수를new 연산자 없이 호출하는 방법
 console.log(Boolean('JavaScript')); // true

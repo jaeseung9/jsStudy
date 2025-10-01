@@ -13,6 +13,7 @@ console.log(result);
 
 
 // 2. 중첩된 상항 연산자
-var score = 82;
+var score = 85;
 var geade = (score >= 90) ? "A" : (score >= 80) ? "B" : (score >= 70) ? "C" : "D";
 console.log(grade);
+

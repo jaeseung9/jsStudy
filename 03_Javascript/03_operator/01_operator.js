@@ -23,5 +23,6 @@ c -= 3;
 
 // 3. 증감 연산자
 var d = 5;
-console.log(d++);
-console.log(++d);
+console.log(d++); // 후위 증가(출력: 5)
+console.log(++d); // 전위 증가(출력: 7)
+console.log(--d); // 전위 증가(출력: 6)

@@ -39,4 +39,10 @@ var obj = null;
 // TypeError: Cannot read properties of null (reading 'value')
 //var val = obj.value;
 
+// 에러 방지(NUll Check)
 var val = obj && obj.value;
+
+/* 
+if(obj !== null) 과 같은 건 코드를 대체하고,
+프로그램이 멈추는 것을 막을 수 있다.
+*/

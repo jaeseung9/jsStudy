@@ -16,8 +16,11 @@ console.log(val);
 var str = '';
 console.log(str.length);
 
+
+// 빈 문자열과 같은 Falsy 값을 false 취급해서 생기는 문제
 var len = str && str.length;
 console.log(len);
 
+// 빈 문자열은 null 또는 undefined가 아니므로 문자열의 길이 값이 담긴다.
 var len = str?.length;
 console.log(len);

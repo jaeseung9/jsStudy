@@ -42,3 +42,5 @@ console.log(foods.indexOf('샌드위치'));
 
 console.log(foods.includes('샌드위치'));
 console.log(foods.includes('홍어'));
+
+//MDN(Mozilla Developer Network)에서 'Array' 검색하면 모드 메서드 설명을 볼 수 있다.

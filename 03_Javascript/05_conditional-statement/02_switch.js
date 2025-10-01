@@ -10,9 +10,9 @@ switch (fruit) {
 
     case "사과": console.log("선택한 과일은 사과입니다.");
         break;
-    case "바나나": console.log("선택한 바나나은 사과입니다.");
+    case "바나나": console.log("선택한 과일은 바나나입니다.");
         break;
-        case "망고","ㄴ": console.log("선택한 망고은 사과입니다.");
+        case "망고","ㄴ": console.log("선택한 과일은 망고입니다.");
         break;
         default:
             console.log("몰루");

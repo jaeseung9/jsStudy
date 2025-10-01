@@ -18,3 +18,7 @@ var y = 20;
 
 // 1. 동등 연산자
 console.log(x == y); // false
+console.log(x != y); // true
+
+// 2. 일치 연산자 : 타입까지 비교 
+console.log(x === 10);

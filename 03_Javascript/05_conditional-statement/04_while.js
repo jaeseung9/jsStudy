@@ -28,4 +28,4 @@ let number = 1;
 do{
     console.log(`숫자: $(number)`);
     Number;
-} while(number <=3)
+} while(number <=3);
