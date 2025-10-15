@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>useContext 예제</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState, useEffect, useRef, createContext, useContext } = React;
+
+      // 1️⃣ Context 생성
+      const UserContext = createContext();
+
+      // 2️⃣ 로그인 컴포넌트
+      function LoginComponent() {
+        const [form, setForm] = useState({ username: '', password: '' });
+        const usernameRef = useRef();
+
+        // 전역 context 접근 (UserContext 안의 setter 가져옴)
+        const { setUser } = useContext(UserContext);
+
+        useEffect(() => {
+          usernameRef.current.focus();
+        }, []);
+
+        const onChangeHandler = (e) => {
+          setForm({ ...form, [e.target.name]: e.target.value });
+        };
+
+        const onClickHandler = () => {
+          if (!form.username) {
+            alert('이름을 입력하세요!');
+            return;
+          }
+          // 로그인한 유저 이름을 context에 저장
+          setUser(form.username);
+          alert(`${form.username}님 환영합니다!`);
+          setForm({ username: '', password: '' });
+          usernameRef.current.focus();
+        };
+
+        return (
+          <>
+            <input
+              type="text"
+              name="username"
+              placeholder="이름"
+              onChange={onChangeHandler}
+              value={form.username}
+              ref={usernameRef}
+            />
+            <br />
+            <input
+              type="password"
+              name="password"
+              placeholder="비밀번호"
+              onChange={onChangeHandler}
+              value={form.password}
+            />
+            <br />
+            <button onClick={onClickHandler}>로그인</button>
+          </>
+        );
+      }
+
+      // 3️⃣ 상단 공통 헤더 (로그인 사용자 표시)
+      function Header() {
+        const { user } = useContext(UserContext);
+        return (
+          <div
+            style={{
+              backgroundColor: '#333',
+              color: 'white',
+              padding: '10px',
+              marginBottom: '10px',
+            }}
+          >
+            <h2>🎬 영화리뷰사이트</h2>
+            {user ? <p>안녕하세요, {user}님 👋</p> : <p>로그인 해주세요.</p>}
+          </div>
+        );
+      }
+
+      // 4️⃣ 메인 App
+      function App() {
+        const [user, setUser] = useState(null);
+
+        return (
+          // Provider로 user 상태를 전역 공급
+          <UserContext.Provider value={{ user, setUser }}>
+            <Header />
+            <LoginComponent />
+          </UserContext.Provider>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
+</html>
