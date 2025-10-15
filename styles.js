@@ -1,19 +1,21 @@
-// styles.js - 팀 공통 스타일 가이드
+// styles.js - 영화 사이트 스타일 가이드 (CDN용)
+// 나중에 Vite/Webpack 사용 시: 모든 const 앞에 export 붙이면 됨!
 
 // ========== 색상 ==========
-export const colors = {
+const colors = {
   // 메인 컬러
-  primary: '#4A90E2', // 파란색
-  secondary: '#7B68EE', // 보라색
+  primary: '#E50914', // Netflix 레드
+  secondary: '#B20710', // 어두운 레드
 
   // 배경색
-  background: '#F5F5F5', // 연한 회색
+  dark: '#141414', // 다크 배경
+  darkGray: '#2F2F2F', // 어두운 회색
+  mediumGray: '#808080', // 중간 회색
+  lightGray: '#E5E5E5', // 밝은 회색
   white: '#FFFFFF',
 
-  // 텍스트
-  textBlack: '#333333',
-  textGray: '#666666',
-  textLight: '#999999',
+  // 강조 색상
+  yellow: '#F5C518', // 별점 색상 (IMDB 스타일)
 
   // 상태 색상
   success: '#4CAF50', // 초록 (성공)
@@ -21,13 +23,14 @@ export const colors = {
   error: '#F44336', // 빨강 (에러)
   info: '#2196F3', // 하늘색 (정보)
 
-  // 테두리
-  border: '#DDDDDD',
-  borderDark: '#CCCCCC',
+  // 텍스트
+  textPrimary: '#FFFFFF',
+  textSecondary: '#808080',
+  textLight: '#999999',
 };
 
 // ========== 간격 (padding, margin) ==========
-export const spacing = {
+const spacing = {
   xs: '4px',
   sm: '8px',
   md: '16px',
@@ -37,17 +40,18 @@ export const spacing = {
 };
 
 // ========== 폰트 크기 ==========
-export const fontSize = {
+const fontSize = {
   small: '12px',
   medium: '14px',
   large: '16px',
   xlarge: '20px',
   xxlarge: '24px',
   title: '32px',
+  hero: '48px',
 };
 
 // ========== 폰트 굵기 ==========
-export const fontWeight = {
+const fontWeight = {
   light: 300,
   normal: 400,
   medium: 500,
@@ -55,35 +59,56 @@ export const fontWeight = {
 };
 
 // ========== 그림자 ==========
-export const shadow = {
+const shadow = {
   small: '0 2px 4px rgba(0,0,0,0.1)',
   medium: '0 4px 8px rgba(0,0,0,0.15)',
   large: '0 8px 16px rgba(0,0,0,0.2)',
+  header: '0 2px 8px rgba(0,0,0,0.3)',
 };
 
 // ========== 테두리 반경 ==========
-export const borderRadius = {
+const borderRadius = {
   small: '4px',
   medium: '8px',
   large: '12px',
+  round: '20px',
   circle: '50%',
 };
 
+// ========== 전환 효과 ==========
+const transition = {
+  fast: 'all 0.2s ease',
+  normal: 'all 0.3s ease',
+  slow: 'all 0.5s ease',
+};
+
 // ========== 공통 스타일 컴포넌트 ==========
-export const commonStyles = {
-  // 컨테이너
-  container: {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: spacing.md,
+const commonStyles = {
+  // Header 스타일
+  header: {
+    backgroundColor: colors.dark,
+    color: colors.white,
+    padding: `${spacing.md} ${spacing.xl}`,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    boxShadow: shadow.header,
   },
 
-  // 카드
-  card: {
-    backgroundColor: colors.white,
-    padding: spacing.lg,
-    borderRadius: borderRadius.medium,
-    boxShadow: shadow.small,
+  // 로고
+  logo: {
+    margin: 0,
+    fontSize: fontSize.xxlarge,
+    color: colors.primary,
+  },
+
+  // 검색 입력창
+  searchInput: {
+    padding: spacing.sm,
+    borderRadius: borderRadius.small,
+    border: 'none',
+    width: '300px',
+    fontSize: fontSize.medium,
   },
 
   // 버튼 기본
@@ -94,32 +119,116 @@ export const commonStyles = {
     border: 'none',
     borderRadius: borderRadius.small,
     cursor: 'pointer',
-    transition: 'all 0.3s',
+    transition: transition.normal,
   },
 
-  // 주요 버튼
+  // 주요 버튼 (로그인 등)
   buttonPrimary: {
     backgroundColor: colors.primary,
     color: colors.white,
   },
 
-  // 보조 버튼
-  buttonSecondary: {
-    backgroundColor: colors.secondary,
+  // 투명 버튼 (마이페이지 등)
+  buttonOutline: {
+    backgroundColor: 'transparent',
+    color: colors.white,
+    border: `1px solid ${colors.white}`,
+    padding: `${spacing.sm} ${spacing.md}`,
+    borderRadius: borderRadius.small,
+  },
+
+  // 필터 버튼
+  filterButton: {
+    backgroundColor: colors.dark,
+    color: colors.white,
+    border: `1px solid ${colors.mediumGray}`,
+    padding: `${spacing.sm} ${spacing.md}`,
+    borderRadius: borderRadius.round,
+    cursor: 'pointer',
+    transition: transition.normal,
+  },
+
+  // 필터 섹션
+  filterSection: {
+    backgroundColor: colors.darkGray,
+    padding: spacing.xl,
     color: colors.white,
   },
 
-  // 삭제 버튼
-  buttonDanger: {
-    backgroundColor: colors.error,
-    color: colors.white,
+  // 컨테이너
+  container: {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: spacing.xl,
   },
 
-  // input
+  // 영화 카드
+  movieCard: {
+    backgroundColor: colors.darkGray,
+    borderRadius: borderRadius.medium,
+    overflow: 'hidden',
+    cursor: 'pointer',
+    transition: transition.normal,
+  },
+
+  // 영화 포스터
+  moviePoster: {
+    width: '100%',
+    height: '250px',
+    backgroundColor: colors.dark,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '80px',
+  },
+
+  // 영화 정보
+  movieInfo: {
+    padding: spacing.md,
+  },
+
+  // 영화 제목
+  movieTitle: {
+    margin: `0 0 ${spacing.sm} 0`,
+    color: colors.white,
+    fontSize: fontSize.large,
+  },
+
+  // 영화 평점
+  movieRating: {
+    color: colors.yellow,
+    fontWeight: fontWeight.bold,
+  },
+
+  // 섹션 제목
+  sectionTitle: {
+    color: colors.white,
+    marginBottom: spacing.lg,
+    fontSize: fontSize.xxlarge,
+  },
+
+  // Footer
+  footer: {
+    backgroundColor: colors.dark,
+    color: colors.mediumGray,
+    padding: spacing.xl,
+    textAlign: 'center',
+    marginTop: spacing.xxl,
+  },
+
+  // 카드 (일반용)
+  card: {
+    backgroundColor: colors.white,
+    padding: spacing.lg,
+    borderRadius: borderRadius.medium,
+    boxShadow: shadow.small,
+  },
+
+  // input (일반용)
   input: {
     padding: spacing.md,
     fontSize: fontSize.medium,
-    border: `1px solid ${colors.border}`,
+    border: `1px solid ${colors.lightGray}`,
     borderRadius: borderRadius.small,
     width: '100%',
   },
@@ -128,10 +237,83 @@ export const commonStyles = {
   heading: {
     fontSize: fontSize.title,
     fontWeight: fontWeight.bold,
-    color: colors.textBlack,
+    color: colors.textPrimary,
     margin: `${spacing.lg} 0`,
   },
 };
+
+// ========== 레이아웃 스타일 ==========
+const layout = {
+  // Grid 레이아웃 (영화 카드)
+  movieGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+    gap: spacing.lg,
+  },
+
+  // Flex 레이아웃 (가로 정렬)
+  flexRow: {
+    display: 'flex',
+    gap: spacing.md,
+    alignItems: 'center',
+  },
+
+  // Flex 레이아웃 (세로 정렬)
+  flexColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spacing.md,
+  },
+
+  // Space Between
+  spaceBetween: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+};
+
+// ========== 사용 예시 (주석) ==========
+/*
+
+## CDN 환경에서 사용 방법
+
+### HTML에서 불러오기
+<script src="styles.js"></script>
+<script type="text/babel">
+  // 바로 사용 가능!
+  console.log(colors.primary);
+</script>
+
+### 컴포넌트에서 사용
+function Header() {   
+  return (
+    <div style={commonStyles.header}>
+      <h1 style={commonStyles.logo}>🎬 MovieHub</h1>
+      <input 
+        type="text" 
+        placeholder="검색..."
+        style={commonStyles.searchInput}
+      />
+      <button style={{
+        ...commonStyles.button,
+        ...commonStyles.buttonPrimary
+      }}>
+        로그인
+      </button>
+    </div>
+  );
+}
+
+### 나중에 Vite/Webpack 사용 시 변경 방법:
+1. 모든 const 앞에 export 추가
+   const colors = {...}  →  export const colors = {...}
+
+2. HTML에서 import 사용
+   import { colors, spacing, commonStyles } from './styles.js';
+
+*/
+
 // ========== 사용 예시 (주석) ==========
 /*
 

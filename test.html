@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieHub - 영화 추천 & 리뷰</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body
+    style="
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    "
+  >
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useState } = React;
+
+      // ========== 스타일 토큰 ==========
+      const colors = {
+        primary: '#E50914',
+        secondary: '#B20710',
+        dark: '#141414',
+        darkGray: '#2F2F2F',
+        mediumGray: '#808080',
+        lightGray: '#E5E5E5',
+        white: '#FFFFFF',
+        yellow: '#F5C518',
+      };
+
+      const spacing = {
+        xs: '4px',
+        sm: '8px',
+        md: '16px',
+        lg: '24px',
+        xl: '32px',
+        xxl: '48px',
+      };
+
+      const fontSize = {
+        small: '12px',
+        medium: '14px',
+        large: '16px',
+        xlarge: '20px',
+        xxlarge: '24px',
+        title: '32px',
+        hero: '48px',
+      };
+
+      // ========== 더미 데이터 ==========
+      const genres = [
+        '액션',
+        '코미디',
+        '드라마',
+        '스릴러',
+        '로맨스',
+        'SF',
+        '공포',
+        '애니메이션',
+      ];
+      const moods = [
+        '슬플 때',
+        '기분 전환',
+        '로맨틱',
+        '스릴 넘치게',
+        '웃고 싶을 때',
+      ];
+      const situations = [
+        '데이트',
+        '혼자보기',
+        '가족과 함께',
+        '친구들과',
+        '비 오는 날',
+      ];
+
+      const topMovies = [
+        { id: 1, title: '오펜하이머', rating: 4.5, poster: '🎬', year: 2023 },
+        { id: 2, title: '듄: 파트2', rating: 4.8, poster: '🎬', year: 2024 },
+        { id: 3, title: '기생충', rating: 4.7, poster: '🎬', year: 2019 },
+        { id: 4, title: '인터스텔라', rating: 4.9, poster: '🎬', year: 2014 },
+        { id: 5, title: '범죄도시4', rating: 4.2, poster: '🎬', year: 2024 },
+      ];
+
+      const latestMovies = [
+        {
+          id: 6,
+          title: '데드풀과 울버린',
+          rating: 4.3,
+          poster: '🎬',
+          year: 2024,
+        },
+        { id: 7, title: '베놈3', rating: 3.8, poster: '🎬', year: 2024 },
+        { id: 8, title: '위키드', rating: 4.6, poster: '🎬', year: 2024 },
+      ];
+
+      // ========== 컴포넌트 ==========
+
+      function Header({ isLoggedIn, onLoginClick }) {
+        return (
+          <div
+            style={{
+              backgroundColor: colors.dark,
+              color: colors.white,
+              padding: `${spacing.md} ${spacing.xl}`,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+            }}
+          >
+            <h1
+              style={{
+                margin: 0,
+                fontSize: fontSize.xxlarge,
+                color: colors.primary,
+              }}
+            >
+              🎬 MovieHub
+            </h1>
+            <div
+              style={{ display: 'flex', gap: spacing.lg, alignItems: 'center' }}
+            >
+              <input
+                type="text"
+                placeholder="영화, 감독, 배우 검색..."
+                style={{
+                  padding: spacing.sm,
+                  borderRadius: '4px',
+                  border: 'none',
+                  width: '300px',
+                  fontSize: fontSize.medium,
+                }}
+              />
+              {isLoggedIn ? (
+                <div style={{ display: 'flex', gap: spacing.md }}>
+                  <button
+                    style={{
+                      backgroundColor: 'transparent',
+                      color: colors.white,
+                      border: `1px solid ${colors.white}`,
+                      padding: `${spacing.sm} ${spacing.md}`,
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    마이페이지
+                  </button>
+                  <button
+                    style={{
+                      backgroundColor: colors.primary,
+                      color: colors.white,
+                      border: 'none',
+                      padding: `${spacing.sm} ${spacing.md}`,
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                    }}
+                    onClick={onLoginClick}
+                  >
+                    로그아웃
+                  </button>
+                </div>
+              ) : (
+                <button
+                  style={{
+                    backgroundColor: colors.primary,
+                    color: colors.white,
+                    border: 'none',
+                    padding: `${spacing.sm} ${spacing.lg}`,
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    fontSize: fontSize.medium,
+                  }}
+                  onClick={onLoginClick}
+                >
+                  로그인
+                </button>
+              )}
+            </div>
+          </div>
+        );
+      }
+
+      function FilterSection() {
+        return (
+          <div
+            style={{
+              backgroundColor: colors.darkGray,
+              padding: spacing.xl,
+              color: colors.white,
+            }}
+          >
+            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+              <div style={{ marginBottom: spacing.lg }}>
+                <h3 style={{ marginBottom: spacing.md }}>🎭 장르별 추천</h3>
+                <div
+                  style={{ display: 'flex', gap: spacing.sm, flexWrap: 'wrap' }}
+                >
+                  {genres.map((genre) => (
+                    <button
+                      key={genre}
+                      style={{
+                        backgroundColor: colors.dark,
+                        color: colors.white,
+                        border: `1px solid ${colors.mediumGray}`,
+                        padding: `${spacing.sm} ${spacing.md}`,
+                        borderRadius: '20px',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {genre}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ marginBottom: spacing.lg }}>
+                <h3 style={{ marginBottom: spacing.md }}>😊 기분별 추천</h3>
+                <div
+                  style={{ display: 'flex', gap: spacing.sm, flexWrap: 'wrap' }}
+                >
+                  {moods.map((mood) => (
+                    <button
+                      key={mood}
+                      style={{
+                        backgroundColor: colors.dark,
+                        color: colors.white,
+                        border: `1px solid ${colors.mediumGray}`,
+                        padding: `${spacing.sm} ${spacing.md}`,
+                        borderRadius: '20px',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {mood}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 style={{ marginBottom: spacing.md }}>🎬 상황별 추천</h3>
+                <div
+                  style={{ display: 'flex', gap: spacing.sm, flexWrap: 'wrap' }}
+                >
+                  {situations.map((situation) => (
+                    <button
+                      key={situation}
+                      style={{
+                        backgroundColor: colors.dark,
+                        color: colors.white,
+                        border: `1px solid ${colors.mediumGray}`,
+                        padding: `${spacing.sm} ${spacing.md}`,
+                        borderRadius: '20px',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {situation}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      function MovieCard({ movie }) {
+        return (
+          <div
+            style={{
+              backgroundColor: colors.darkGray,
+              borderRadius: '8px',
+              overflow: 'hidden',
+              cursor: 'pointer',
+              transition: 'transform 0.3s',
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform = 'scale(1.05)')
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          >
+            <div
+              style={{
+                width: '100%',
+                height: '250px',
+                backgroundColor: colors.dark,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '80px',
+              }}
+            >
+              {movie.poster}
+            </div>
+            <div style={{ padding: spacing.md }}>
+              <h4
+                style={{ margin: `0 0 ${spacing.sm} 0`, color: colors.white }}
+              >
+                {movie.title}
+              </h4>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+              >
+                <span
+                  style={{ color: colors.mediumGray, fontSize: fontSize.small }}
+                >
+                  {movie.year}
+                </span>
+                <span style={{ color: colors.yellow, fontWeight: 'bold' }}>
+                  ⭐ {movie.rating}
+                </span>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      function MovieSection({ title, movies }) {
+        return (
+          <div style={{ marginBottom: spacing.xxl }}>
+            <h2
+              style={{
+                color: colors.white,
+                marginBottom: spacing.lg,
+                fontSize: fontSize.xxlarge,
+              }}
+            >
+              {title}
+            </h2>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                gap: spacing.lg,
+              }}
+            >
+              {movies.map((movie) => (
+                <MovieCard key={movie.id} movie={movie} />
+              ))}
+            </div>
+          </div>
+        );
+      }
+
+      function Footer() {
+        return (
+          <div
+            style={{
+              backgroundColor: colors.dark,
+              color: colors.mediumGray,
+              padding: spacing.xl,
+              textAlign: 'center',
+              marginTop: spacing.xxl,
+            }}
+          >
+            <p style={{ margin: 0 }}>© 2025 MovieHub. All rights reserved.</p>
+            <p
+              style={{
+                margin: `${spacing.sm} 0 0 0`,
+                fontSize: fontSize.small,
+              }}
+            >
+              문의 | 공지사항 | 이용약관 | 개인정보처리방침
+            </p>
+          </div>
+        );
+      }
+
+      function App() {
+        const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+        return (
+          <div style={{ backgroundColor: colors.dark, minHeight: '100vh' }}>
+            <Header
+              isLoggedIn={isLoggedIn}
+              onLoginClick={() => setIsLoggedIn(!isLoggedIn)}
+            />
+            <FilterSection />
+            <div
+              style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+                padding: spacing.xl,
+              }}
+            >
+              <MovieSection title="🔥 TOP 인기 상영작" movies={topMovies} />
+              <MovieSection title="🆕 최신 개봉작" movies={latestMovies} />
+            </div>
+            <Footer />
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
+</html>
