@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- 깃허브 이모지 api : 'https://api.github.com/emojis' -->
+
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      function App() {
+        // 상태: 전체 이모지, 검색된 이모지, 검색어
+        const [allEmojis, setAllEmojis] = useState([]);
+        const [filteredEmojis, setFilteredEmojis] = useState([]);
+        const [searchTerm, setSearchTerm] = useState('');
+
+        // 처음 한 번만 실행: API에서 이모지 가져오기
+        useEffect(() => {
+          fetch('https://api.github.com/emojis')
+            .then((res) => res.json())
+            .then((data) => {
+              const emojis = Object.entries(data); // {key: value} -> [[key, value], ...]
+              setAllEmojis(emojis);
+
+              // setFilteredEmojis(emojis);
+            });
+        }, []);
+
+        // 검색 버튼 클릭 시: 검색어가 포함된 이모지만 필터링
+        const handleSearch = () => {
+          if (searchTerm.trim() === '') {
+            setFilteredEmojis([]);
+            return;
+          }
+          const filtered = allEmojis.filter(([name]) =>
+            name.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          setFilteredEmojis(filtered);
+        };
+
+        return (
+          <div>
+            <h1>이모지 검색기</h1>
+
+            {/* 검색창 */}
+            <div>
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+              />
+              <button onClick={handleSearch}>검색</button>
+            </div>
+
+            {/* 이모지 목록 */}
+            <div>
+              {filteredEmojis.map(([name, url]) => (
+                <img
+                  key={name}
+                  src={url}
+                  alt={name}
+                  width="100"
+                  onClick={() => alert(name)}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
+</html>

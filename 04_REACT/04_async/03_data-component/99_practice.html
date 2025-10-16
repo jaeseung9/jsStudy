@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      function CharacterList() {
+        // 1. 필요한 상태(캐릭터 목록, 로딩, 에러)를 정의합니다.
+
+        const [usersName, setUsersName] = useState([]);
+        const [usersImage, setUsersImage] = useState([]);
+        const [loading, setLoading] = useState(true);
+        const [error, setError] = useState(null);
+
+        // 2. 전체 캐릭터 목록 api를 호출합니다("https://rickandmortyapi.com/api/character")
+        useEffect(() => {
+          fetch('https://rickandmortyapi.com/api/character')
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error('네트워크 응답에 문제가 있습니다.');
+              }
+              return response.json();
+            })
+            .then((responseUsers) => setUsers(responseUsers))
+            .catch((error) => {
+              console.error('데이터를 불러오는데 실패했습니다.', error);
+              setError(error); // 에러가 발생하면 에러 state 에 저장
+            })
+            .finally(() => setLoading(false));
+        }, []);
+
+        if (loading) {
+          return <p>로딩 중 ....</p>;
+        }
+        if (error) {
+          return <p>오류 발생했습니다 {error.message}</p>;
+        }
+
+        return (
+          // 캐릭터카드 목록 랜더링
+          <div className="container">
+            {users.map((character) => (
+              <div key={character.id} className="character-card">
+                <img src={character.image} alt={character.name} />
+                <h3>{character.name}</h3>
+                <p>Status: {character.status}</p>
+                <p>Species: {character.species}</p>
+              </div>
+            ))}
+          </div>
+        );
+      }
+
+      // props로 받은 데이터를 순수하게 렌더링하는 역할만 한다.
+      function CharacterCard() {
+        return <div className="card"></div>;
+      }
+
+      function App() {
+        return (
+          <div>
+            <h1 style={{ textAlign: 'center' }}>
+              릭 앤 모티 캐릭터 도감(서재승)
+            </h1>
+            <CheracterList />
+          </div>
+        );
+      }
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
+</html>
