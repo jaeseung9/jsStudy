@@ -10,7 +10,7 @@ public class Application {
         //app.whyNeedLoops();
         //app.forLoopSum();
         //app.nestedForLoop();
-        //app.nestedForLoop2();
+        app.nestedForLoop2();
     }
 
     public void whyNeedLoops() {
@@ -126,4 +126,4 @@ public class Application {
 }
 
 
-}
+
