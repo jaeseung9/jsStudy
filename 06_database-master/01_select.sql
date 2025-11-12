@@ -6,7 +6,7 @@
 SELECT menu_name FROM tbl_menu;
 
 -- 여러 열의 데이터 검색
-SELECT 
+SELECT
 	menu_code,
     menu_name,
     menu_price
