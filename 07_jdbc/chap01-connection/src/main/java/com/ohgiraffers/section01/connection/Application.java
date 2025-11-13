@@ -1,5 +1,6 @@
 package com.ohgiraffers.section01.connection;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,19 +16,20 @@ public class Application {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             /* getConnection 스태틱 메소드를 이용해서 Connection(통로) 생성 */
-            con = DriverManager.getConnection("jdbc:mysql://localhost/employeedb","ohgiraffers","ohgiraffers");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/employeedb", "ohgiraffers", "ohgiraffers");
 
             System.out.println("con : " + con);
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-            if(con != null){
+        } finally {
+            if(con != null) {
                 try {
                     con.close();
                 } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
             }
         }

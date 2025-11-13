@@ -18,16 +18,18 @@ public class Application2 {
             prop.load(new FileReader("src/main/java/com/ohgiraffers/section01/connection/jdbc-config.properties"));
 
             System.out.println(prop);
-            // prop 객체에서 key를 이용해 설정 값을 꺼낸다.
+
+            // prop 객체에서 key를 이용해 설정 값을 꺼낸다
             String driver = prop.getProperty("driver");
             String url = prop.getProperty("url");
             String user = prop.getProperty("user");
             String password = prop.getProperty("password");
 
+            // 변순에 담긴 설정 값으로 DB에 연결
             Class.forName(driver);
-            con = DriverManager.getConnection(url,user,password);
+            con = DriverManager.getConnection(url, user, password);
 
-            System.out.println("con :" + con);
+            System.out.println("con : " + con);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -35,9 +37,9 @@ public class Application2 {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-            if(con != null){
-                try{
+        } finally {
+            if(con != null) {
+                try {
                     con.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
