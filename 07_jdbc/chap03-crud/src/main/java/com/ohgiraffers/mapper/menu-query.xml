@@ -17,5 +17,9 @@
             ,menu_price = ?
         WHERE menu_code = ?
     </entry>
+    <entry key = "deleteMenu">
+        DELETE FROM tnl_menu
+        WHERE MENU menu_code = ?
+    </entry>
 
 </properties>
