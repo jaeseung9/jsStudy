@@ -2,7 +2,7 @@ package com.ohgiraffers.section03.eneity;
 
 import jakarta.persistence.*;
 
-@Entity(name = "Section02Menu")
+@Entity(name = "Section03Menu")
 @Table(name = "tbl_menu")
 public class Menu {
 
