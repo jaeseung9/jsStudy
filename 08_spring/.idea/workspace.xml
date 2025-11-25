@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="424dcec1-22b2-4d33-8b15-2beb0bc8d839" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/../09_jpa-master/qweqweqwe/src/main/java/com/ohgiraffers/qweqweqwe/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa-master/qweqweqwe/src/main/java/com/ohgiraffers/qweqweqwe/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa-master/qweqweqwe/src/main/java/com/ohgiraffers/qweqweqwe/repository/UserRepository1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa-master/qweqweqwe/src/main/java/com/ohgiraffers/qweqweqwe/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa-master/qweqweqwe/src/main/java/com/ohgiraffers/qweqweqwe/service/UserService1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa-master/qweqweqwe/src/test/java/com/ohgiraffers/qweqweqwe/User/UserServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa-master/qweqweqwe/src/test/java/com/ohgiraffers/qweqweqwe/User/UserServiceTests1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/MemberRegistDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/MemberRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap02-mapping/src/test/java/com/ohgiraffers/mapping/section01/entity/MemberServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section01/simple/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section01/simple/SimpleJPQLRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section02/parameter/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section02/parameter/ParameterBindingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section03/projection/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section03/projection/CategoryInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section03/projection/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section03/projection/ProjectionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section03/projection/ProjectionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section04/paging/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/main/java/com/ohgiraffers/associationmapping/jpql/section04/paging/PagingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/test/java/com/ohgiraffers/associationmapping/jpql/section01/simple/SimpleJPQLRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/test/java/com/ohgiraffers/associationmapping/jpql/section02/parameter/ParameterBindingRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/test/java/com/ohgiraffers/associationmapping/jpql/section03/projection/ProjectionServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../09_jpa/chap04-jpql/src/test/java/com/ohgiraffers/associationmapping/jpql/section04/paging/PagingRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/ES6/01_class/01_class-basic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/ES6/01_class/02_class-inheritance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/ES6/01_class/03_static-members.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/ES6/02_arrow-function/01_arrow-function.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/ES6/03_iterable/01_iterable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/ES6/04_spread-syntax/01_rest-and-spread.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/ES6/05_destructuring-assignment/01_destructuring.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/01_data-type/01_keyword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/01_data-type/02_primitive-type.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/02_variable-and-type/01_implicit-coercion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/02_variable-and-type/02_explicit-coercion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/03_operator/01_operator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/03_operator/02_comparison-operator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/03_operator/03_logical-operator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/03_operator/04_ternary-operator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/04_modern-operator/01_optional-chaining-operator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/04_modern-operator/02_nullish-coalescing-operator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/05_conditional-statement/01_if.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/05_conditional-statement/02_switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/05_conditional-statement/03_for.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/05_conditional-statement/04_while.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/05_conditional-statement/05_continue_break.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/06_object/01_object.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/06_object/02_property-accessor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/06_object/03_property-change-add-remove.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/07_function/01_function-definition/01_function-declaration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/07_function/01_function-definition/02_function-hoisting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/07_function/02_function-call/01_parameter-and-argument.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/07_function/02_function-call/02_return.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/07_function/03_various-types-of-functions/01_first-class-function.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/07_function/03_various-types-of-functions/02_callback-function.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/07_function/03_various-types-of-functions/03_iife.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/08_scope/01_problem-of-var.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/08_scope/02_solution-let.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/08_scope/03_solution-const.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/08_scope/04_scope-summary.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/09_constructor-function/01_constructor-function.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/09_constructor-function/02_instance-creation-process.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/10_prototype/01_prototype-basics.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/10_prototype/02_prototype-chain.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/10_prototype/03_constructor-prototype.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/11_array/01_array-basic/01_array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/11_array/01_array-basic/02_array-method.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/11_array/02_array-higher-order-function/01_sort.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/11_array/02_array-higher-order-function/02_forEach.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/11_array/02_array-higher-order-function/03_map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/11_array/02_array-higher-order-function/04_filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/11_array/02_array-higher-order-function/05_reduce_find_some_every.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/12_standard-built-in-object/01_built-in-object.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/99_practice/01_variable-data-type.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/99_practice/02_operator_conditional.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/99_practice/03_object_array_funciton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/99_practice/04_ES6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/99_practice/05_DOM.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/core/99_practice/06_EVENT.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/01_DOM/01_dom-selector.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/01_DOM/02_node-traversal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/01_DOM/03_node-manipulation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/01_DOM/04_dom-manipulation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/01_DOM/05_attribute-and-property.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/01_DOM/06_css-manipulation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/02_Event/01_event-handling.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/02_Event/02_event-object-and-this.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/02_Event/03_event-propagation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/02_Event/04_event-control.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/02_Event/05_mouse-and-keyboard-events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/02_Event/06_form-events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/03_Timer/01_asynchronous.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../03_javascript-master/web/04_BOM/01_browser-object-model.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/01_select.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/02_order-by.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/03_where.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/04_distinct.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/05_limit.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/06_join.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/07_grouping.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/08_subqueries.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/09_set-operators.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/10_DML.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/11_transaction.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/12_DDL.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/13_CONSTRAINTS.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/14_BUILD_IN_FUNCTIONS.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../06_database-master/546546546.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/src/main/java/com/ohgiraffers/problem/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/src/main/java/com/ohgiraffers/problem/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/src/main/java/com/ohgiraffers/problem/MenuAndCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap00-intro/src/test/java/com/ohgiraffers/problem/ProblemsOfUsingDirectSQLTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/java/com/ohgiraffers/section01/entitymanager/EntityManagerFactoryGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/java/com/ohgiraffers/section01/entitymanager/EntityManagerGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/java/com/ohgiraffers/section02/crud/EntityManagerCRUD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/java/com/ohgiraffers/section02/crud/EntityManagerGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/java/com/ohgiraffers/section02/crud/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/java/com/ohgiraffers/section03/eneity/EntityLifeCycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/java/com/ohgiraffers/section03/eneity/EntityManagerGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/java/com/ohgiraffers/section03/eneity/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/test/java/com/ohgiraffers/section01/entitymanager/EntityManagerFactoryGeneratorTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/test/java/com/ohgiraffers/section02/crud/EntityManagerCRUDTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../09_jpa-master/chap01-persistence-context/src/test/java/com/ohgiraffers/section03/entity/EntityLifeCycleTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="35y6nd5FQ2XIMbYlqvx3SD3R3c2" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="424dcec1-22b2-4d33-8b15-2beb0bc8d839" name="변경" comment="" />
+      <created>1764070131992</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764070131992</updated>
+      <workItem from="1764070134893" duration="5000" />
+    </task>
+    <servers />
+  </component>
+</project>
