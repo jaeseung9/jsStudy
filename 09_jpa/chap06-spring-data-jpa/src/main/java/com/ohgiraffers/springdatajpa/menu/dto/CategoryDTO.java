@@ -9,14 +9,9 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-public class MenuRequestDTO {
+public class CategoryDTO {
 
-    private String menuName;
-    private int menuPrice;
     private int categoryCode;
-    private String orderableStatus;
-
-    public int getCategoryCode() {
-        return categoryCode;
-    }
+    private String categoryName;
+    private Integer refCategoryCode;
 }
