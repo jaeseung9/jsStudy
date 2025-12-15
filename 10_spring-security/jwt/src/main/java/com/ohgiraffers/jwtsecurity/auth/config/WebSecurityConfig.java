@@ -49,6 +49,13 @@ public class WebSecurityConfig {
 
         http.csrf(AbstractHttpConfigurer::disable)
 
+                // URL 권한 설정
+       /*         .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/user/**").hasAnyRole("USER","ADMIN")
+                        .requestMatchers("api/v1/public/**").permitAll()
+                        .anyRequest().authenticated())*/
+
                 // 필터 추가
                 // jwtAuthorizationFilter : 토큰 인증 후 사용자 인증 정보를 세팅해주는 역할
                 .addFilterBefore(jwtAuthorizationFilter(), BasicAuthenticationFilter.class)
@@ -112,6 +119,7 @@ public class WebSecurityConfig {
     public CustomAuthenticationFilter customAuthenticationFilter() {
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(authenticationManager());
 
+        // 로그인 요청을 처리할 URL 설정
         customAuthenticationFilter.setFilterProcessesUrl("/login");
 
         customAuthenticationFilter.setAuthenticationSuccessHandler(customAuthLoginSuccessHandler());

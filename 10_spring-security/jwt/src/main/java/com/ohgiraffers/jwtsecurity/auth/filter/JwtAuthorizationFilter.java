@@ -39,6 +39,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 
         List<String> roleLessList = Arrays.asList("/signup");
 
+        // 권한이 필요 없는 애면 다음 내용 동작하게 한다.
         if (roleLessList.contains((request.getRequestURI()))) {
             chain.doFilter(request, response);
             return;
