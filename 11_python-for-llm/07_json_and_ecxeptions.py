@@ -48,7 +48,7 @@ except FileExistsError:
 except json.JSONDecodeError:
     print(f"파일이 올바른 JSON 형식이 아닙니다: {output_filename}")
 except Exception as e:
-    print(f"파일 읽기 중 오류 발생: {e}")
+    print(f"파일 읽기 중 오류 발생: {e}")  
 
 # JSON 문자열과 파이썬 객체 변환
 
@@ -59,4 +59,7 @@ print(json_string)
 print(type(json_string))
 
 # JSON 문자열 -> 파이썬 딕셔너리로 변환
-retrieved_string = '{"id" : "user1", "isActive" : true}'
+retrieved_string = '{"id" : "user1", "isActive" :  true}'
+retrieved_dict = json.loads(retrieved_string)
+print(retrieved_dict)
+print(type(retrieved_dict))
